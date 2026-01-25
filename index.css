@@ -21,6 +21,11 @@
   margin: 20px;
 }
 
+.logout-button {
+  background-color: transparent;
+  border-color: transparent;
+}
+
 /* BODY COMPONENT*/
 
 .search {
@@ -32,17 +37,21 @@
 }
 
 .filter-btn {
-  margin: 10px;
+  margin-right: 10px;
+  /* margin: 10px;
   background-color: transparent;
   font-size: 18px;
-  border-color: transparent;
+  color: blue; */
+}
+
+.search-box {
+  size: 20px;
 }
 
 .restaurant-container,
 .skeleton-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   padding: 10px 40px;
 }
 
@@ -81,6 +90,10 @@
   color: grey;
   margin-top: 5px;
   padding-left: 3px;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 /* Skeleton Card*/
