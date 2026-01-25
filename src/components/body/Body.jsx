@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import { API_URL_FOR_FETCH_RESTAURANT_LIST } from "../../../utils/constant";
+import RestaurantSkeleton from "./RestaurantSkeleton";
 
 const Body = () => {
   const [restaurantList, setRestaurantList] = useState([]);
@@ -17,7 +18,9 @@ const Body = () => {
     setRestaurantList(restaurantResponse);
   };
 
-  return (
+  return restaurantList.length === 0 ? (
+    <RestaurantSkeleton />
+  ) : (
     <div className="body">
       <div className="filter">
         <button

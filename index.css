@@ -38,7 +38,8 @@
   border-color: transparent;
 }
 
-.restaurant-container {
+.restaurant-container,
+.skeleton-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -80,4 +81,38 @@
   color: grey;
   margin-top: 5px;
   padding-left: 3px;
+}
+
+/* Skeleton Card*/
+.skeleton-card {
+  height: 50vh;
+  width: 20vw;
+  border-radius: 10%;
+  margin: 2vh;
+  background-color: #ffffff;
+}
+
+.restaurant-image-skeleton {
+  height: 33vh;
+  width: 20vw;
+  border-radius: 10%;
+  margin: 2vh;
+  background-color: #f0f0f0;
+}
+
+.restaurant-description-1-skeleton {
+  height: 3vh;
+  width: 60%;
+  padding-left: 15px;
+  margin-left: 25px;
+  background-color: #f0f0f0;
+}
+
+.restaurant-description-2-skeleton {
+  height: 3vh;
+  width: 90%;
+  padding-left: 15px;
+  margin-left: 25px;
+  margin-top: 15px;
+  background-color: #f0f0f0;
 }
