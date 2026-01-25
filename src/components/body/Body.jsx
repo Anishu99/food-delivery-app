@@ -1,12 +1,21 @@
-import { useState } from "react";
-import { apiResponse, apiResponse1 } from "../../../utils/mock-data";
+import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
+import { API_URL_FOR_FETCH_RESTAURANT_LIST } from "../../../utils/constant";
 
 const Body = () => {
-  let restaurantResponse =
-    apiResponse1.data.cards[1].card.card.gridElements.infoWithStyle.restaurants;
+  const [restaurantList, setRestaurantList] = useState([]);
+  useEffect(() => {
+    fetchRestaurantList();
+  }, []);
 
-  const [restaurantList, setRestaurantList] = useState(restaurantResponse);
+  const fetchRestaurantList = async () => {
+    const data = await fetch(API_URL_FOR_FETCH_RESTAURANT_LIST);
+    const data_to_json = await data.json();
+    let restaurantResponse =
+      data_to_json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants;
+    setRestaurantList(restaurantResponse);
+  };
 
   return (
     <div className="body">
@@ -14,7 +23,7 @@ const Body = () => {
         <button
           onClick={() => {
             setRestaurantList(
-              restaurantResponse.filter((res) => res.info.avgRating >= 4)
+              restaurantList.filter((res) => res.info.avgRating >= 4.5)
             );
           }}
           className="filter-btn"
@@ -24,7 +33,7 @@ const Body = () => {
         <button
           className="filter-btn"
           onClick={() => {
-            setRestaurantList(restaurantResponse);
+            fetchRestaurantList();
           }}
         >
           Reset
