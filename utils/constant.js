@@ -8,3 +8,7 @@ export const APPLICATION_LOGO_URL1 =
 
 export const API_URL_FOR_FETCH_RESTAURANT_LIST =
   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.68723285843476&lng=76.69283905508495&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+
+export const API_URL_FOR_RESTAURANT_LIST_UPDATE =
+  "https://www.swiggy.com/dapi/restaurants/list/update";
+export const CORS_PROXY_URL = "https://proxy.corsfix.com/?";
