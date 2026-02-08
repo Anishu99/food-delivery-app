@@ -4,7 +4,7 @@ import {
   API_URL_FOR_FETCH_RESTAURANT_LIST,
   API_URL_FOR_RESTAURANT_LIST_UPDATE,
 } from "../../../utils/constant";
-import RestaurantSkeleton from "./RestaurantSkeleton";
+import { RestaurantSkeleton } from "./RestaurantSkeleton";
 
 const Body = () => {
   const [filteredRestaurantList, setFilteredRestaurantList] = useState([]);

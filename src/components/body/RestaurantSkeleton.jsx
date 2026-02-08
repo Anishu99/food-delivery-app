@@ -1,4 +1,4 @@
-const SkeletonCard = () => {
+export const SkeletonCard = () => {
   return (
     <div className="skeleton-card">
       <div className="restaurant-image-skeleton"></div>
@@ -9,7 +9,7 @@ const SkeletonCard = () => {
   );
 };
 
-const RestaurantSkeleton = () => {
+export const RestaurantSkeleton = () => {
   return (
     <div className="skeleton-container">
       <SkeletonCard />
@@ -29,5 +29,3 @@ const RestaurantSkeleton = () => {
     </div>
   );
 };
-
-export default RestaurantSkeleton;
