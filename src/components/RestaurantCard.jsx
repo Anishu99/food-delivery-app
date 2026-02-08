@@ -1,4 +1,4 @@
-import { IMAGE_BASE_URL } from "../../utils/constant";
+import { IMAGE_BASE_URL } from "../utils/constant";
 
 const RestaurantCard = (props) => {
   const { response } = props;
