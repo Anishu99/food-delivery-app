@@ -9,14 +9,14 @@ const RestaurantMenu = () => {
   const [foodCategoryOptions, setFoodCategoryOptions] = useState(null);
   useEffect(() => {
     fetchMenu();
-  });
+  }, []);
 
   const fetchMenu = async () => {
     let data = Restaurant_Data;
     setResInfo(data);
     setFoodCategoryOptions(
       resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[5]
-        ?.card?.card?.categories
+        ?.card?.card?.categories || []
     );
   };
 
@@ -24,7 +24,7 @@ const RestaurantMenu = () => {
   //   let costForTwoMessage = "234";
   //   let cuisines = ["a", "b"];
   const { name, costForTwoMessage, cuisines } =
-    resInfo?.data?.cards[2]?.card?.card?.info;
+    resInfo?.data?.cards[2]?.card?.card?.info || {};
   return resInfo === null ? (
     <SkeletonCard />
   ) : (

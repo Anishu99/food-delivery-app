@@ -5,6 +5,7 @@ import {
   API_URL_FOR_RESTAURANT_LIST_UPDATE,
 } from "../../../utils/constant";
 import { RestaurantSkeleton } from "./RestaurantSkeleton";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [filteredRestaurantList, setFilteredRestaurantList] = useState([]);
@@ -22,37 +23,6 @@ const Body = () => {
         ?.restaurants;
     setRestaurantList(restaurantResponse);
     setFilteredRestaurantList(restaurantResponse);
-  };
-
-  const getMoreRestaurantList = async () => {
-    const api_response = await fetch(API_URL_FOR_RESTAURANT_LIST_UPDATE, {
-      method: "POST",
-
-      body: JSON.stringify({
-        lat: 30.68723285843476,
-        lng: 76.69283905508495,
-        nextOffset: "CJhlELQ4KICYgc/w7+eaBTCnEzgD",
-        widgetOffset: {
-          NewListingView_category_bar_chicletranking_TwoRows: "",
-          NewListingView_category_bar_chicletranking_TwoRows_Rendition: "",
-          Restaurant_Group_WebView_SEO_PB_Theme: "",
-          collectionV5RestaurantListWidget_SimRestoRelevance_food_seo: "144",
-          inlineFacetFilter: "",
-          restaurantCountWidget: "",
-        },
-        filters: {},
-        seoParams: {
-          seoUrl: "https://www.swiggy.com/restaurants",
-          pageType: "FOOD_HOMEPAGE",
-          apiName: "FoodHomePage",
-          businessLine: "FOOD",
-        },
-        page_type: "DESKTOP_WEB_LISTING",
-        _csrf: "thFWxTguvMkl-Tjp7NWlNwsDsPphIq19m1PDelew",
-      }),
-    });
-    //  const json_response = await api_response.json();
-    console.log("JSON,", api_response);
   };
 
   return restaurantList.length === 0 ? (
@@ -103,14 +73,12 @@ const Body = () => {
       <div className="restaurant-container">
         {filteredRestaurantList.map((resData) => {
           return (
-            <RestaurantCard
-              key={resData.info.id}
-              response={resData}
-            ></RestaurantCard>
+            <Link key={resData.info.id} to={"/restaurant/" + resData.info.id}>
+              <RestaurantCard response={resData} />
+            </Link>
           );
         })}
       </div>
-      <button onClick={getMoreRestaurantList}>Get More Restaurants</button>
     </div>
   );
 };
