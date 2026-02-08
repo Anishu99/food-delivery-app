@@ -2,14 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import Header from "./src/components/Header";
-import Body from "./src/components/body/Body";
+import Body from "./src/components/Body";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import About from "./src/components/About";
 import ContactUs from "./src/components/ContactUs";
 import ErrorPage from "./src/components/ErrorPage";
 import { Outlet } from "react-router-dom";
-import RestaurauntMenu from "./src/components/body/RestaurantMenu";
-import RestaurantMenu from "./src/components/body/RestaurantMenu";
+import RestaurauntMenu from "./src/components/RestaurantMenu";
+import RestaurantMenu from "./src/components/RestaurantMenu";
 // rafce to automatically create new component - provided by vs code
 const AppLayout = () => {
   return (

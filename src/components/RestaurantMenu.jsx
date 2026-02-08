@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Restaurant_Data } from "../../../assets/restaurant-data";
+import { Restaurant_Data } from "../../assets/restaurant-data";
 import { SkeletonCard } from "./RestaurantSkeleton";
 import { useParams } from "react-router-dom";
 
